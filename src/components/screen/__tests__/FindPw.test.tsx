@@ -1,7 +1,7 @@
 import React from 'react';
-import * as renderer from 'react-test-renderer';
+import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
 
-import Temp from '../Temp';
+import FindPw from '../FindPw';
 import { render, fireEvent, getByTestId } from '@testing-library/react';
 
 const props = {
@@ -10,16 +10,16 @@ const props = {
   },
 };
 
-describe('[Temp] render', () => {
+describe('[FindPw] render', () => {
   it('renders without crashing', () => {
-    const rendered = renderer.create(<Temp />).toJSON();
+    const rendered = renderer.create(<FindPw />).toJSON();
     expect(rendered).toMatchSnapshot();
     expect(rendered).toBeTruthy();
   });
 });
 
-describe('[Temp] Interaction', () => {
-  const component = <Temp {...props} />;
+describe('[FindPw] Interaction', () => {
+  const component = <FindPw {...props} />;
   let renderResult: any;
 
   beforeEach(() => {
@@ -27,8 +27,7 @@ describe('[Temp] Interaction', () => {
   });
 
   it('should simulate [onClick] when [btn] has been clicked', () => {
-    const btnInstance = renderResult.getByText('back to tab page');
-    fireEvent.click(btnInstance);
-    expect(props.history.goBack).toHaveBeenCalledTimes(1);
+    const textInstance: any = renderResult.getByTestId('myText');
+    expect(textInstance.textContent).toEqual('Find Pw');
   });
 });
