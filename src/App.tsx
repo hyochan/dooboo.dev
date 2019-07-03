@@ -10,14 +10,23 @@ const rootElement = document.getElementById('app') as HTMLElement;
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#6772E5',
-      main: '#6772E5',
-      dark: '#6772E5',
+      light: '#212121',
+      main: '#212121',
+      dark: '#212121',
     },
     secondary: {
-      light: '#fff',
-      main: '#fff',
-      dark: '#fff',
+      light: '#18202c',
+      main: '#18202c',
+      dark: '#18202c',
+    },
+  },
+  overrides: {
+    MuiDrawer: {
+      paper: {
+        background: '#212121',
+        // this is where magic happens
+        '& *': { color: 'rgba(255, 255, 255, 0.7)' },
+      },
     },
   },
 });

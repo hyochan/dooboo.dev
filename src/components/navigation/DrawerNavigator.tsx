@@ -108,7 +108,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Fanding
+            Channel Title
           </Typography>
         </Toolbar>
       </AppBar>
