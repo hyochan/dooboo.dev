@@ -1,7 +1,4 @@
-### ANNOUNCEMENT
-DO NOT MODIFY OR CHANGE THE CODE BEFORE CONFIRMED BY `DOOBOOLAB`. THIS REPOSITORY IS USED IN `DOOBOO-CLI`.
-
-# React Typescript Boilerplate
+# dooboo.dev
 [![CircleCI](https://circleci.com/gh/dooboolab/dooboo.dev.svg?style=shield)](https://circleci.com/gh/dooboolab/dooboo.dev)
 [![codecov](https://codecov.io/gh/dooboolab/dooboo.dev/branch/master/graph/badge.svg)](https://codecov.io/gh/dooboolab/dooboo.dev)
 

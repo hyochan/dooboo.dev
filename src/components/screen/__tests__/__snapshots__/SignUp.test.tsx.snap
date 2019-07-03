@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SignUp] render renders without crashing 1`] = `
+<div
+  className="sc-bdVaJa jHgyWZ"
+>
+  <div
+    data-testid="myText"
+  >
+    Sign Up
+  </div>
+</div>
+`;
