@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+/dist/*
+!/dist/*.html
+!/dist/favicon.ico
+coverage/
+package-lock.json

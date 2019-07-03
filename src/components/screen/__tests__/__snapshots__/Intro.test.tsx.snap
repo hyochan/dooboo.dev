@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Intro] screen rendering test should render outer component and snapshot matches 1`] = `
+<div
+  className="sc-bZQynM kSqyDp"
+>
+  <div
+    className="sc-gzVnrw coPpBh"
+  >
+    <span
+      className="sc-dnqmqq ctyQgL"
+    >
+      
+    </span>
+    <span
+      className="sc-dnqmqq ctyQgL"
+    >
+      
+    </span>
+    <span
+      className="sc-dnqmqq ctyQgL"
+    >
+      
+    </span>
+  </div>
+  <div
+    className="sc-htoDjs jtOwzg"
+  >
+    <button
+      className="sc-bdVaJa eovVDg"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        <img
+          className="sc-ifAKCX iaWYmM"
+          src="test-file-stub"
+        />
+        <span
+          className="sc-bxivhb hZnkGD"
+        >
+          Login
+        </span>
+      </div>
+    </button>
+    <button
+      className="sc-bwzfXH czrGzF"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        <span
+          className="sc-htpNat lnXBCo"
+        >
+          Navigate
+        </span>
+      </div>
+    </button>
+    <button
+      className="sc-bwzfXH czrGzF"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": "60px",
+        }
+      }
+    >
+      <div>
+        <span
+          className="sc-htpNat lnXBCo"
+        >
+          Change theme
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
