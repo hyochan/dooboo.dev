@@ -21,9 +21,9 @@ function SwitchNavigator(props: {}) {
       <div style={{ textAlign: 'center' }}>
         <Switch>
           <Route exact path='/' component={DrawerNavigator} />
-          <Route path='/signin' component={SignIn} />
-          <Route path='/signup' component={SignUp} />
-          <Route path='/findpw' component={FindPw} />
+          <Route path='/signin' component={(param) => <SignIn {...param} {...props}/>} />
+          <Route path='/signup' component={(param) => <SignUp {...param} {...props}/>} />
+          <Route path='/findpw' component={(param) => <FindPw {...param} {...props}/>} />
           <Route render={(param) => <Temp {...param} {...props}/>} />
         </Switch>
       </div>
