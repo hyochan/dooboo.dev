@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Button from '../shared/Button';
+
 const Container = styled.div`
   flex: 1;
   background-color: transparent;
@@ -18,7 +20,7 @@ function Page(props: IProps) {
     <Container>
       <div
         data-testid='myText'
-      >FindPw</div>
+      >Member</div>
     </Container>
   );
 }

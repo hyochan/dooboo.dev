@@ -2,31 +2,24 @@
 
 exports[`[Temp] render renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa gpZOTA"
+  className="sc-bZQynM ZUfse"
 >
   <button
-    className="MuiButtonBase-root MuiButton-root MuiButton-text"
-    disabled={false}
-    onBlur={[Function]}
+    className="sc-bdVaJa eovVDg"
     onClick={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={0}
-    type="button"
+    style={
+      Object {
+        "height": "60px",
+      }
+    }
   >
-    <span
-      className="MuiButton-label"
-    >
-      back to tab page
-    </span>
+    <div>
+      <span
+        className="sc-bxivhb hZnkGD"
+      >
+        back to tab page
+      </span>
+    </div>
   </button>
 </div>
 `;
