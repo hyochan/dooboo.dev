@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[FindPw] render renders without crashing 1`] = `
+exports[`[Chat] render renders without crashing 1`] = `
 <div
   className="sc-bdVaJa jHgyWZ"
 >
   <div
     data-testid="myText"
   >
-    FindPw
+    Chat
   </div>
 </div>
 `;

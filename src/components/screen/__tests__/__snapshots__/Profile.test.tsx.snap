@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Main] render renders without crashing 1`] = `
+exports[`[Profile] render renders without crashing 1`] = `
 <div
   className="sc-bdVaJa jHgyWZ"
 >
   <div
     data-testid="myText"
   >
-    Main Page
+    Profile
   </div>
 </div>
 `;

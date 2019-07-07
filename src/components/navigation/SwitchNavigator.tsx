@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { createTheme } from '../../theme';
+import { createTheme, ThemeType } from '../../theme';
 import SignIn from '../screen/SignIn';
 import SignUp from '../screen/SignUp';
 import FindPw from '../screen/FindPw';
@@ -15,9 +15,10 @@ interface IProps {
   store?: any;
 }
 
-function SwitchNavigator(props: {}) {
+function SwitchNavigator(props: IProps) {
   const { state } = useContext(AppContext);
   const { theme } = state;
+
   return (
     <ThemeProvider theme={createTheme(theme)}>
       <BrowserRouter>

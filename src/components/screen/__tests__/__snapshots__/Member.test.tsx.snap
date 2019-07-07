@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Member] render renders without crashing 1`] = `
+<div
+  className="sc-bZQynM cTMucD"
+>
+  <div
+    data-testid="myText"
+  >
+    Member
+  </div>
+  <button
+    className="sc-bdVaJa eovVDg"
+    style={
+      Object {
+        "height": "60px",
+      }
+    }
+  >
+    <div>
+      <span
+        className="sc-bxivhb hZnkGD"
+      >
+        change theme
+      </span>
+    </div>
+  </button>
+</div>
+`;
