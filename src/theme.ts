@@ -31,6 +31,34 @@ const colors = {
   darkBackgroundLight: '#393241',
 };
 
+const theme = {
+  light: {
+    background: `linear-gradient(to bottom right, ${colors.lightBackground}, ${colors.lightBackgroundLight})`,
+    btnPrimary: colors.skyBlue,
+    btnPrimaryFont: 'white',
+    btnPrimaryLight: colors.whiteGray,
+    btnPrimaryLightFont: 'black',
+    fontColor: 'black',
+  },
+  dark: {
+    background: `linear-gradient(to bottom right, ${colors.darkBackground}, ${colors.darkBackgroundLight})`,
+    btnPrimary: colors.skyBlue,
+    btnPrimaryFont: 'white',
+    btnPrimaryLight: colors.whiteGray,
+    btnPrimaryLightFont: 'black',
+    fontColor: 'white',
+  },
+};
+
+export const createTheme = (type = ThemeType.LIGHT) => {
+  switch (type) {
+    case ThemeType.LIGHT:
+      return theme.light;
+    case ThemeType.DARK:
+      return theme.dark;
+  }
+};
+
 export const device = {
   mobileS: `(min-width: ${size.mobileS})`,
   mobileM: `(min-width: ${size.mobileM})`,

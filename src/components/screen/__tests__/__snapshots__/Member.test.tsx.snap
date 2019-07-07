@@ -1,12 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Temp] render renders without crashing 1`] = `
+exports[`[Member] render renders without crashing 1`] = `
 <div
-  className="sc-bZQynM ZUfse"
+  className="sc-bZQynM cTMucD"
 >
+  <div
+    data-testid="myText"
+  >
+    Member
+  </div>
   <button
     className="sc-bdVaJa eovVDg"
-    onClick={[Function]}
     style={
       Object {
         "height": "60px",
@@ -17,7 +21,7 @@ exports[`[Temp] render renders without crashing 1`] = `
       <span
         className="sc-bxivhb hZnkGD"
       >
-        back to tab page
+        change theme
       </span>
     </div>
   </button>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Button from '../shared/Button';
+
 const Container = styled.div`
   flex: 1;
   background-color: transparent;
@@ -11,6 +13,7 @@ const Container = styled.div`
 
 interface IProps {
   history?: any;
+  changeTheme?: any;
 }
 
 function Page(props: IProps) {
@@ -18,7 +21,11 @@ function Page(props: IProps) {
     <Container>
       <div
         data-testid='myText'
-      >FindPw</div>
+      >Member</div>
+      <Button
+        onClick={props.changeTheme}
+        text='change theme'
+      />
     </Container>
   );
 }

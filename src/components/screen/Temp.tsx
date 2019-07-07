@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
+import Button from '../shared/Button';
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +21,8 @@ function Temp(props: IProps) {
     <Container>
       <Button
         onClick={() => history.goBack()}
-      >back to tab page</Button>
+        text='back to tab page'
+      />
     </Container>
   );
 }

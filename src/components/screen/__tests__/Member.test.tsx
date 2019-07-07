@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer, { ReactTestRendererJSON } from 'react-test-renderer';
 
-import FindPw from '../FindPw';
+import Member from '../Member';
 import { render, fireEvent, getByTestId } from '@testing-library/react';
 
 const props = {
@@ -10,16 +10,16 @@ const props = {
   },
 };
 
-describe('[FindPw] render', () => {
+describe('[Member] render', () => {
   it('renders without crashing', () => {
-    const rendered = renderer.create(<FindPw />).toJSON();
+    const rendered = renderer.create(<Member />).toJSON();
     expect(rendered).toMatchSnapshot();
     expect(rendered).toBeTruthy();
   });
 });
 
-describe('[FindPw] Interaction', () => {
-  const component = <FindPw {...props} />;
+describe('[Member] Interaction', () => {
+  const component = <Member {...props} />;
   let renderResult: any;
 
   beforeEach(() => {
@@ -28,6 +28,6 @@ describe('[FindPw] Interaction', () => {
 
   it('should simulate [onClick] when [btn] has been clicked', () => {
     const textInstance: any = renderResult.getByTestId('myText');
-    expect(textInstance.textContent).toEqual('FindPw');
+    expect(textInstance.textContent).toEqual('Member');
   });
 });
