@@ -22,10 +22,6 @@ function Page(props: IProps) {
       <div
         data-testid='myText'
       >Member</div>
-      <Button
-        onClick={props.changeTheme}
-        text='change theme'
-      />
     </Container>
   );
 }
