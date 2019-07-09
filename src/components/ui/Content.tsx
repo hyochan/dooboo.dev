@@ -6,7 +6,7 @@ interface ContentProps {
 }
 
 const Container = styled.div`
-  min-height: calc(100vh - 116px);
+  min-height: calc(100vh - 90px);
 `;
 
 const Content: React.FC<ContentProps> = ({ children }) => {

@@ -19,6 +19,7 @@
     "react": "^16.8.6",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.8.6",
+    "react-ink": "^6.4.0",
     "react-router-dom": "^5.0.0",
     "styled-components": "^4.2.0"
   },

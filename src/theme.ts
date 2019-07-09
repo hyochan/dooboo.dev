@@ -29,6 +29,26 @@ const colors = {
   lightBackgroundLight: '#f7f6f3',
   darkBackground: '#323739',
   darkBackgroundLight: '#393241',
+  ocGray0: '#f8f9fa',
+  ocGray1: '#f1f3f5',
+  ocGray2: '#e9ecef',
+  ocGray3: '#dee2e6',
+  ocGray4: '#ced4da',
+  ocGray5: '#adb5bd',
+  ocGray6: '#868e96',
+  ocGray7: '#495057',
+  ocGray8: '#343a40',
+  ocGray9: '#212529',
+  ocBlue0: '#e7f5ff',
+  ocBlue1: '#d0ebff',
+  ocBlue2: '#a5d8ff',
+  ocBlue3: '#74c0fc',
+  ocBlue4: '#4dabf7',
+  ocBlue5: '#339af0',
+  ocBlue6: '#228be6',
+  ocBlue7: '#1c7ed6',
+  ocBlue8: '#1971c2',
+  ocBlue9: '#1864ab',
 };
 
 const theme = {
@@ -38,7 +58,17 @@ const theme = {
     btnPrimaryFont: 'white',
     btnPrimaryLight: colors.whiteGray,
     btnPrimaryLightFont: 'black',
-    fontColor: 'black',
+    fontColor: colors.ocGray8,
+    sideBar: {
+      background: colors.ocBlue9,
+    },
+    header: {
+      background: 'white',
+      titleColor: colors.ocGray7,
+      tabFontColor: colors.ocGray6,
+      activeTabFontColor: colors.ocBlue8,
+      border: colors.ocGray3,
+    },
   },
   dark: {
     background: `linear-gradient(to bottom right, ${colors.darkBackground}, ${colors.darkBackgroundLight})`,
@@ -46,7 +76,7 @@ const theme = {
     btnPrimaryFont: 'white',
     btnPrimaryLight: colors.whiteGray,
     btnPrimaryLightFont: 'black',
-    fontColor: 'white',
+    fontColor: colors.ocGray0,
   },
 };
 
