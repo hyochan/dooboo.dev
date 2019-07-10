@@ -23,6 +23,6 @@ const SideBar: React.FC<{}> = () => {
       <Logo>Dooboo.Dev</Logo>
     </Container>
   );
-}
+};
 
 export default SideBar;
