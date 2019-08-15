@@ -1,5 +1,5 @@
 import { Form } from 'formik';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 type TInputProps = {
   'data-testid'?: string;
@@ -14,14 +14,14 @@ export const Wrapper = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const FormInnerWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-`
+`;
 
 export const SignContainer = styled(Form)<TInputProps>`
   display: flex;
@@ -29,7 +29,7 @@ export const SignContainer = styled(Form)<TInputProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 export const BottomTextBtnContainer = styled.div`
   display: flex;
@@ -46,6 +46,6 @@ export const BottomTextButton = styled.input.attrs(() => ({
   border: none;
   text-decoration-line: underline;
   background-color: transparent;
-  color: ${({ theme }) => theme.highlighted };
+  color: ${({ theme }) => theme.highlighted};
   cursor: pointer;
 `;
