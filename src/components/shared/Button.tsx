@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
 
 interface IProps {
   id?: string;
+  type?: ButtonHTMLAttributes<any>["type"];
+  disabled?: boolean;
   inverted?: boolean;
   imgSrc?: any;
   text?: string;
   onClick?: () => void;
   isLoading?: boolean;
+  width?: string;
+  height?: string;
 }
 
 const PrimaryTextLight = styled.span`
@@ -43,11 +47,13 @@ const Spinner = styled.div`
 `;
 
 function Button(props: IProps) {
-  const { inverted, onClick, imgSrc, text } = props;
+  const { inverted, onClick, imgSrc, text, type, disabled, width = '100%',  height = '60px' } = props;
   if (inverted) {
     return (
       <ButtonPrimaryLight
-        style={{ height: '60px' }}
+        type={type}
+        disabled={disabled}
+        style={{ width, height }}
         onClick={onClick}
       >
         {
@@ -69,7 +75,9 @@ function Button(props: IProps) {
   }
   return (
     <ButtonPrimary
-      style={{ height: '60px' }}
+      type={type}
+      disabled={disabled}
+      style={{ width, height }}
       onClick={onClick}
     >
       {

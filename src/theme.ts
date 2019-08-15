@@ -29,6 +29,8 @@ const colors = {
   lightBackgroundLight: '#f7f6f3',
   darkBackground: '#323739',
   darkBackgroundLight: '#393241',
+  errorRedLight: 'rgb(235, 62, 25)',
+  errorRedDark: 'rgb(198, 50, 18)',
 };
 
 const theme = {
@@ -37,8 +39,10 @@ const theme = {
     btnPrimary: colors.skyBlue,
     btnPrimaryFont: 'white',
     btnPrimaryLight: colors.whiteGray,
-    btnPrimaryLightFont: 'black',
+    btnPimaryLightFont: 'black',
     fontColor: 'black',
+    highlighted: colors.greenBlue,
+    error: colors.errorRedDark,
   },
   dark: {
     background: `linear-gradient(to bottom right, ${colors.darkBackground}, ${colors.darkBackgroundLight})`,
@@ -47,6 +51,8 @@ const theme = {
     btnPrimaryLight: colors.whiteGray,
     btnPrimaryLightFont: 'black',
     fontColor: 'white',
+    highlighted: colors.greenBlue,
+    error: colors.errorRedLight,
   },
 };
 

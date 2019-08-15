@@ -10,6 +10,7 @@ exports[`[Temp] render renders without crashing 1`] = `
     style={
       Object {
         "height": "60px",
+        "width": "100%",
       }
     }
   >
