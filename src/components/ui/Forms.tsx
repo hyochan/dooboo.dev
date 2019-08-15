@@ -14,7 +14,7 @@ export const FormLabel = styled.label`
   justify-content: flex-end;
   align-self: flex-end;
   color: ${({ theme }) => theme.fontColor};
-`
+`;
 
 export const FormError = styled.span`
   display: flex;
@@ -22,7 +22,7 @@ export const FormError = styled.span`
   font-weight: bold;
   align-self: flex-end;
   color: ${({ theme }) => theme.error}
-`
+`;
 
 export const FormInput = styled.input<TInput>`
   display: flex;
@@ -44,4 +44,4 @@ export const FormInput = styled.input<TInput>`
       color: ${({ theme, isTouched, error }) => ((isTouched && error) ? theme.error : theme.highlighted)};
     }
   }
-`
+`;

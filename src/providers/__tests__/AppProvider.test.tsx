@@ -13,23 +13,23 @@ describe('[AppProvider] rendering test', () => {
 });
 
 describe('[AppProvider] interactions', () => {
-  const dummyUser = { 
+  const dummyUser = {
     displayName: 'dummy',
     email: 'dummy@test.com',
     password: 'dummyPW',
     age: 100,
-    job: 'front-end'
+    job: 'front-end',
   };
 
   it('should check default actions', () => {
     const renderResult = () => {
       const [state, dispatch] = useReducer(reducer, initialState);
-      const defaultTest = useCallback(() => dispatch({ 
-        type: 'default-test', 
-        payload: null
+      const defaultTest = useCallback(() => dispatch({
+        type: 'default-test',
+        payload: null,
       }), []);
       return { state, defaultTest };
-    }
+    };
     const { result } = renderHook(() => renderResult());
 
     act(() => {
@@ -43,16 +43,16 @@ describe('[AppProvider] interactions', () => {
     const stateWithDummyUser = { ...initialState, user: dummyUser };
     const renderResult = () => {
       const [state, dispatch] = useReducer(reducer, initialState);
-      const setUserTest = useCallback(() => dispatch({ 
-        type: 'set-user', 
-        payload: dummyUser
+      const setUserTest = useCallback(() => dispatch({
+        type: 'set-user',
+        payload: dummyUser,
       }), []);
-      const resetUserTest = useCallback(() => dispatch({ 
-        type: 'reset-user', 
-        payload: null
+      const resetUserTest = useCallback(() => dispatch({
+        type: 'reset-user',
+        payload: null,
       }), []);
       return { state, setUserTest, resetUserTest };
-    }
+    };
     const { result } = renderHook(() => renderResult());
 
     // set dummy user first
@@ -63,7 +63,7 @@ describe('[AppProvider] interactions', () => {
     expect(result.current.state).toMatchObject(stateWithDummyUser);
 
     // then reset
-    act(() => {      
+    act(() => {
       result.current.resetUserTest();
     });
 
@@ -74,12 +74,12 @@ describe('[AppProvider] interactions', () => {
     const stateWithDarkTheme = { ...initialState, theme: ThemeType.DARK };
     const renderResult = () => {
       const [state, dispatch] = useReducer(reducer, initialState);
-      const changeThemeTest = useCallback(() => dispatch({ 
-        type: 'change-theme-mode', 
-        payload: { theme: ThemeType.DARK }
+      const changeThemeTest = useCallback(() => dispatch({
+        type: 'change-theme-mode',
+        payload: { theme: ThemeType.DARK },
       }), []);
       return { state, changeThemeTest };
-    }
+    };
     const { result } = renderHook(() => renderResult());
 
     act(() => {

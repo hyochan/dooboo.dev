@@ -24,20 +24,20 @@ interface IRenderAuthComp extends RouteProps {
 const PrivateRoute: FC<IRenderAuthComp> = ({ component: Component, state, firebase, ...rest }: any) => {
   const [authUser, setAuthUser] = useState(firebase.getCurrentUser());
   useEffect(() => {
-    const unsubscribe = firebase.onAuthStateChanged(authUser => {
+    const unsubscribe = firebase.onAuthStateChanged((authUser) => {
       if (authUser) {
         setAuthUser(authUser);
-      } else {        
-        setAuthUser(null);        
-      }      
+      } else {
+        setAuthUser(null);
+      }
     });
     return () => {
       if (typeof unsubscribe === 'function') {
         unsubscribe();
-      }     
+      }
     };
   });
-  
+
   return (
     <Route
       {...rest}
@@ -50,8 +50,8 @@ const PrivateRoute: FC<IRenderAuthComp> = ({ component: Component, state, fireba
         return (
           <Redirect
             to={{
-              pathname: "/signin",
-              state: { from: props.location }
+              pathname: '/signin',
+              state: { from: props.location },
             }}
           />
         );

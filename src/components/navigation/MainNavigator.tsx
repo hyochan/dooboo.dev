@@ -36,7 +36,7 @@ interface IProps {
 }
 
 function MainNavigator(props: {}) {
-  const { state: { theme, firebase: { signOut }}, dispatch } = useContext(AppContext);
+  const { state: { theme, firebase: { signOut } }, dispatch } = useContext(AppContext);
   const changeTheme = () => {
     let payload: object;
     if (theme === ThemeType.LIGHT) {

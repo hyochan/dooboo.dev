@@ -4,7 +4,7 @@ import { ButtonPrimary, ButtonPrimaryLight } from '../ui/Buttons';
 
 interface IProps {
   id?: string;
-  type?: ButtonHTMLAttributes<any>["type"];
+  type?: ButtonHTMLAttributes<any>['type'];
   disabled?: boolean;
   inverted?: boolean;
   imgSrc?: any;
@@ -47,7 +47,7 @@ const Spinner = styled.div`
 `;
 
 function Button(props: IProps) {
-  const { inverted, onClick, imgSrc, text, type, disabled, width = '100%',  height = '60px' } = props;
+  const { inverted, onClick, imgSrc, text, type, disabled, width = '100%', height = '60px' } = props;
   if (inverted) {
     return (
       <ButtonPrimaryLight
