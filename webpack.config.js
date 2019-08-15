@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: {
@@ -11,6 +12,7 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
+    new Dotenv()
   ],
   resolve: {
     modules: [
