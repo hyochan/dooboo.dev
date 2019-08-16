@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const ButtonPrimary = styled('button')`
+interface IButton {
+  disabled?: boolean
+}
+
+export const ButtonPrimary = styled.button<IButton>`
   display: flex;
   width: 100%;
   height: 100%;
@@ -14,8 +18,8 @@ export const ButtonPrimary = styled('button')`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: ${(props) => props.theme.btnPrimary};
-  opacity: 1;
+  background: ${({ theme }) => theme.btnPrimary};
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   // transition: opacity 0.2s;
 
   &:hover {
@@ -26,7 +30,7 @@ export const ButtonPrimary = styled('button')`
   }
 `;
 
-export const ButtonPrimaryLight = styled('button')`
+export const ButtonPrimaryLight = styled.button<IButton>`
   display: flex;
   width: 100%;
   height: 100%;
@@ -39,7 +43,7 @@ export const ButtonPrimaryLight = styled('button')`
   align-items: center;
   cursor: pointer;
   background: ${(props) => props.theme.btnPrimaryLight};
-  opacity: 1;
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   // transition: opacity 0.2s ease-in-out;
 
   &:hover {

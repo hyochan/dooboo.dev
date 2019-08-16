@@ -3,10 +3,11 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
   },
   coverageDirectory: './coverage/',
-  coveragePathIgnorePatterns: [
+  coveragePathIgnorePatterns: [    
     '/node_modules/',
     '/test/',
     '/dist/',
+    'src/apis',
     'src/models',
     'src/stores',
     'src/utils/Functions',
@@ -21,6 +22,9 @@ module.exports = {
   setupFiles: [
     './test/jestSetup.ts',
   ],
+  setupFilesAfterEnv: [
+    './test/setup.testing-library.ts',
+  ],
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/test/fileTransformer.js',
@@ -34,6 +38,7 @@ module.exports = {
     'json',
   ],
   modulePathIgnorePatterns: [
+    '.history',
     'dist',
   ],
   globals: {

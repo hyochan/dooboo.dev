@@ -6,6 +6,7 @@ exports[`[Button] shared component test component and snapshot matches 1`] = `
   style={
     Object {
       "height": "60px",
+      "width": "100%",
     }
   }
 >
