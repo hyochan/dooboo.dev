@@ -12,15 +12,13 @@ const Container = styled.div`
 `;
 
 interface IProps {
-  history?: any;
+  history?: any
 }
 
 function Page(props: IProps) {
   return (
     <Container>
-      <div
-        data-testid='myText'
-      >Chat</div>
+      <div data-testid='myText'>Chat</div>
     </Container>
   );
 }
