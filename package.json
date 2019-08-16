@@ -72,6 +72,7 @@
     "expect": "^24.8.0",
     "file-loader": "^4.0.0",
     "history": "^4.9.0",
+    "husky": "^3.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "react-hot-loader": "^4.9.0",
@@ -91,5 +92,11 @@
   ],
   "resolutions": {
     "@types/react": "^16.0.40"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint --fix",
+      "pre-push": "yarn test -u"
+    }
   }
 }
