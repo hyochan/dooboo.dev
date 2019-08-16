@@ -9,3 +9,5 @@ package-lock.json
 
 #IDE
 .idea/
+#env files
+.env*

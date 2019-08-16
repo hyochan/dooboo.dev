@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SimpleFormInput] render renders without crashing 1`] = `undefined`;

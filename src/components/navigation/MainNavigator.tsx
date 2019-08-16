@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
+import Button from '../shared/Button';
 import { ThemeType } from '../../theme';
 import { AppContext } from '../../contexts';
 import Chat from '../screen/Chat';
@@ -28,12 +29,10 @@ interface IProps {
 }
 
 function MainNavigator(props: {}) {
-  const { state, dispatch } = useContext(AppContext);
-  const { theme } = state;
-
+  const { state: { theme, firebase: { signOut } }, dispatch } = useContext(AppContext);
   const changeTheme = () => {
     let payload: object;
-    if (state.theme === ThemeType.LIGHT) {
+    if (theme === ThemeType.LIGHT) {
       payload = {
         theme: ThemeType.DARK,
       };
@@ -48,9 +47,21 @@ function MainNavigator(props: {}) {
     });
   };
 
+  const onSignOut = useCallback(() => signOut(), []);
+
   return (
     <Container>
-      <SideBar/>
+      <SideBar />
+      <Button
+        inverted
+        onClick={onSignOut}
+        text='Sign Out'
+        height="2rem"
+      />
+      <Button
+        onClick={() => changeTheme()}
+        text='Change Theme'
+      />
       <Layout>
         <Switch>
           <Route path='/chat' component={(param) => <Chat {...param} {...props}/>}/>

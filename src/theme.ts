@@ -49,6 +49,8 @@ const colors = {
   ocBlue7: '#1c7ed6',
   ocBlue8: '#1971c2',
   ocBlue9: '#1864ab',
+  errorRedLight: 'rgb(235, 62, 25)',
+  errorRedDark: 'rgb(198, 50, 18)',
 };
 
 const theme = {
@@ -69,6 +71,8 @@ const theme = {
       activeTabFontColor: colors.ocBlue8,
       border: colors.ocGray3,
     },
+    highlighted: colors.greenBlue,
+    error: colors.errorRedDark,
   },
   dark: {
     background: `linear-gradient(to bottom right, ${colors.darkBackground}, ${colors.darkBackgroundLight})`,
@@ -77,6 +81,8 @@ const theme = {
     btnPrimaryLight: colors.whiteGray,
     btnPrimaryLightFont: 'black',
     fontColor: colors.ocGray0,
+    highlighted: colors.greenBlue,
+    error: colors.errorRedLight,
   },
 };
 
