@@ -1,12 +1,12 @@
 import React from 'react';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 import SignIn, { signInList } from '../SignIn';
 import { getLabelCapitalize } from '../../shared/Input';
 import { history, act, within, render, fireEvent, wait, waitForElement } from '../../../../test/test-utils';
 
 const props = {
-  history
-}
+  history,
+};
 
 describe('[SignIn] render', () => {
   it('renders without crashing', () => {
@@ -26,7 +26,7 @@ describe('[SignIn] Interaction', () => {
     renderResult = render(
       <div>
         <SignIn {...props} />
-        <LocationDisplay />    
+        <LocationDisplay />
       </div>,
       { route: '/signin' }
     );
@@ -69,7 +69,7 @@ describe('[SignIn] Interaction', () => {
     const swal2EmailInput = Swal2.querySelector('input[type="email"]');
     const swal2OKBtn = Swal2.querySelector('button.swal2-confirm');
 
-    fireEvent.change(swal2EmailInput, { target: { value: 'test@test.com' }});
+    fireEvent.change(swal2EmailInput, { target: { value: 'test@test.com' } });
     fireEvent.click(swal2OKBtn);
 
     await wait(() => expect(wrapper.querySelector('#swal2-content').textContent).toMatch('a link for reset your password has been sent.'));

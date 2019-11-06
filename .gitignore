@@ -6,5 +6,8 @@ node_modules/
 coverage/
 package-lock.json
 
+
+#IDE
+.idea/
 #env files
 .env*

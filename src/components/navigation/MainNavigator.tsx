@@ -2,26 +2,19 @@ import React, { useContext, useCallback } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { createTheme, ThemeType } from '../../theme';
+import Button from '../shared/Button';
+import { ThemeType } from '../../theme';
 import { AppContext } from '../../contexts';
 import Chat from '../screen/Chat';
 import Post from '../screen/Post';
 import Member from '../screen/Member';
 import Profile from '../screen/Profile';
-import Button from '../shared/Button';
+import SideBar from '../ui/SideBar';
+import Layout from '../ui/Layout';
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  align-self: stretch;
-  overflow: scroll;
-  background: ${(props) => props.theme.background};
-
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
+  background: ${(props) => props.theme.background}; 
 `;
 
 const Text = styled.span`
@@ -58,6 +51,7 @@ function MainNavigator(props: {}) {
 
   return (
     <Container>
+      <SideBar />
       <Button
         inverted
         onClick={onSignOut}
@@ -68,13 +62,14 @@ function MainNavigator(props: {}) {
         onClick={() => changeTheme()}
         text='Change Theme'
       />
-      <Text>MainNavigator</Text><br/><br/>
-      <Switch>
-        <Route path='/chat' component={(param) => <Chat {...param} {...props}/>} />
-        <Route path='/post' component={(param) => <Post {...param} {...props}/>} />
-        <Route path='/member' component={(param) => <Member {...param} {...props}/>} />
-        <Route path='/profile' component={(param) => <Profile {...param} {...props}/>} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route path='/chat' component={(param) => <Chat {...param} {...props}/>}/>
+          <Route path='/post' component={(param) => <Post {...param} {...props}/>}/>
+          <Route path='/member' component={(param) => <Member {...param} {...props}/>}/>
+          <Route path='/profile' component={(param) => <Profile {...param} {...props}/>}/>
+        </Switch>
+      </Layout>
     </Container>
   );
 }

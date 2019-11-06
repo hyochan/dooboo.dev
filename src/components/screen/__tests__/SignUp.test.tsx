@@ -1,13 +1,13 @@
 import React from 'react';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 import SignUp, { signUpList } from '../SignUp';
 import { getLabelCapitalize } from '../../shared/Input';
 import { history, within, render, fireEvent, wait, waitForElement } from '../../../../test/test-utils';
 
 const props = {
-  history
-}
+  history,
+};
 
 describe('[SignUp] render', () => {
   it('renders without crashing', () => {
@@ -19,7 +19,7 @@ describe('[SignUp] render', () => {
 describe('[SignUp] Interaction', () => {
   let renderResult: any;
 
-  const LocationDisplay = withRouter(({ location: { pathname, state }}) => {
+  const LocationDisplay = withRouter(({ location: { pathname, state } }) => {
     let email = '';
     if (state) {
       ({ email } = state);
@@ -52,7 +52,7 @@ describe('[SignUp] Interaction', () => {
   });
 
   it('testing moving to the home when successfully signed up.', async () => {
-    window.scrollTo = () => {};  // for requirement of Swal2 test
+    window.scrollTo = () => {}; // for requirement of Swal2 test
     const { container, debug, getByLabelText, getByText, getByTestId } = renderResult;
     const wrapper = container.parentNode;
     const emailInput = getByLabelText(getLabelCapitalize(signUpList[0].label));
@@ -77,7 +77,7 @@ describe('[SignUp] Interaction', () => {
     const locationStateEmail = await waitForElement(() => getByTestId('location-state-email'));
     expect(locationComp.textContent).toBe('/signin');
     expect(locationStateEmail.textContent).toBe('hello@signup.com');
-  }); 
+  });
 
   /* it('see what happens when click "Sign In" button', async () => {
     window.scrollTo = () => {}; // for requirement of Swal2 test
@@ -91,7 +91,6 @@ describe('[SignUp] Interaction', () => {
     fireEvent.change(swal2EmailInput, { target: { value: 'test@test.com' }});
     fireEvent.click(swal2OKBtn);
     await wait(() => expect(wrapper.querySelector('#swal2-content').textContent).toMatch('a link for reset your password has been sent.'));
-    
 
     const { container, debug, getByText } = renderResult;
     const moveToSignInBtn = getByText('Sign In');

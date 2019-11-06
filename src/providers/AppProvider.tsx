@@ -34,7 +34,7 @@ export const initialState: IState = {
     age: 0,
     job: '',
   },
-  firebase: new MockFirebase()
+  firebase: new MockFirebase(),
 };
 
 export const reducer = (state: IState, action: IAction) => {
@@ -42,12 +42,12 @@ export const reducer = (state: IState, action: IAction) => {
     case 'reset-user':
       return { ...state, user: initialState.user };
     case 'set-user':
-      return { 
-        ...state, 
+      return {
+        ...state,
         user: {
           ...state.user,
-          ...action.payload
-        } 
+          ...action.payload,
+        },
       };
     case 'change-theme-mode':
       return { ...state, theme: action.payload.theme };

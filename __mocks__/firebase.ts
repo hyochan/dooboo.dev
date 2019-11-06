@@ -17,31 +17,31 @@ export default class Firebase {
   constructor() {
     this.user = {
       email: '',
-      password: ''
-    }
+      password: '',
+    };
     this.currentUser = () => this.user;
 
     this.createUserWithEmailAndPassword = (email: string, password: string) => {
       this.user.email = email;
       this.user.password = password;
-      return new Promise(resolve => resolve({ user: this.user }));
+      return new Promise((resolve) => resolve({ user: this.user }));
     };
     this.signInWithEmailAndPassword = (email: string, password: string) => {
       this.user.email = email;
       this.user.password = password;
-      return new Promise(resolve => resolve({ user: this.user }));
+      return new Promise((resolve) => resolve({ user: this.user }));
     };
     this.innerSignOut = () => {
       this.user.email = '';
       this.user.password = '';
-    }
-    this.sendPasswordResetEmail = (email: string) => new Promise(resolve => resolve(true));
+    };
+    this.sendPasswordResetEmail = (email: string) => new Promise((resolve) => resolve(true));
   }
 
   /* Auth API */
   getCurrentUser = () => this.currentUser;
-  
-  onAuthStateChanged = (cb: any) => { 
+
+  onAuthStateChanged = (cb: any) => {
     if (typeof cb === 'function') {
       cb();
     }

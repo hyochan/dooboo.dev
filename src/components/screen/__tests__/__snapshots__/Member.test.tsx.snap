@@ -2,29 +2,12 @@
 
 exports[`[Member] render renders without crashing 1`] = `
 <div
-  className="sc-bZQynM cTMucD"
+  className="sc-bdVaJa jHgyWZ"
 >
   <div
     data-testid="myText"
   >
     Member
   </div>
-  <button
-    className="sc-bdVaJa eovVDg"
-    style={
-      Object {
-        "height": "60px",
-        "width": "100%",
-      }
-    }
-  >
-    <div>
-      <span
-        className="sc-bxivhb hZnkGD"
-      >
-        change theme
-      </span>
-    </div>
-  </button>
 </div>
 `;

@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom';
 import { render, queryByAttribute } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ThemeProvider } from 'styled-components';
-import { createMemoryHistory } from 'history'
+import { createMemoryHistory } from 'history';
 
 import { AppProvider as Provider } from '../src/providers';
 import { createTheme } from '../src/theme';
@@ -17,8 +17,8 @@ const AllTheProviders = ({ children }) => {
     <ThemeProvider theme={createTheme()}>
       {children}
     </ThemeProvider>
-  )
-}
+  );
+};
 
 function renderWithRouter(
   ui,
@@ -39,11 +39,11 @@ function renderWithRouter(
     // to reference it in our tests (just try to avoid using
     // this to test implementation details).
     history,
-  }
-} 
+  };
+}
 
 // re-export everything
-export * from '@testing-library/react'
+export * from '@testing-library/react';
 
 // override render method
-export { renderWithRouter as render, getById, userEvent, historyObj as history }
+export { renderWithRouter as render, getById, userEvent, historyObj as history };

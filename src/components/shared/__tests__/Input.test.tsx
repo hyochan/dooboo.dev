@@ -31,7 +31,7 @@ describe('[SimpleFormInput] render', () => {
 });
 
 describe('[SimpleFormInput] interaction', () => {
-  const component = 
+  const component =
     <Formik
       initialValues={{ email: '', password: '' }}
       validationSchema={signInValidationSchema}
@@ -65,20 +65,18 @@ describe('[SimpleFormInput] interaction', () => {
   it('ErrorMessage displays as intended: SignIn email and password.', async () => {
     const { findByTestId, getByLabelText } = renderResult;
     const inputEmail = getByLabelText(getLabelCapitalize(signInList[0].label));
-    fireEvent.change(inputEmail, { target: { value: 'hello' }});
+    fireEvent.change(inputEmail, { target: { value: 'hello' } });
     fireEvent.blur(inputEmail);
     const emailErrorMsg = await findByTestId(`errors-${signInList[0].label}`);
     expect(emailErrorMsg.textContent).toBe('email must be a valid email');
 
     const inputPW = getByLabelText(getLabelCapitalize(signInList[1].label));
-    fireEvent.change(inputPW, { target: { value: '' }});
+    fireEvent.change(inputPW, { target: { value: '' } });
     fireEvent.blur(inputPW);
     const pwErrorMsg = await findByTestId(`errors-${signInList[1].label}`);
     expect(pwErrorMsg.textContent).toBe('password is required');
 
-    fireEvent.change(inputPW, { target: { value: 'hello' }});
+    fireEvent.change(inputPW, { target: { value: 'hello' } });
     await wait(() => expect(pwErrorMsg.textContent).toBe('password must be at least 6 characters.'));
   });
 });
-
-

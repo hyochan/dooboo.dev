@@ -1,5 +1,5 @@
-import React, { useState, useContext, useCallback, Dispatch } from 'react'
-import { Formik, Field } from 'formik'
+import React, { useState, useContext, useCallback, Dispatch } from 'react';
+import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
@@ -11,7 +11,7 @@ import {
   SignContainer,
   FormInnerWrapper,
   BottomTextBtnContainer,
-  BottomTextButton
+  BottomTextButton,
 } from '../SignUp/styles';
 import { SimpleFormInput } from '../../shared/Input';
 import Button from '../../shared/Button';
@@ -24,11 +24,11 @@ const ReactSwal = withReactContent(Swal);
 
 export const signInList = [{
   label: 'email',
-  type: 'text'
+  type: 'text',
 }, {
   label: 'password',
-  type: 'password'
-}]
+  type: 'password',
+}];
 
 const SwalForForgotPW = (pwReset: (email: string) => Promise<void>, setEmail: Dispatch<string>) => {
   ReactSwal.fire({
@@ -37,25 +37,25 @@ const SwalForForgotPW = (pwReset: (email: string) => Promise<void>, setEmail: Di
     input: 'email',
     inputPlaceholder: 'Enter your email address',
     heightAuto: false,
-    customClass: { title: 'swal-custom-overflow' }
+    customClass: { title: 'swal-custom-overflow' },
   }).then(({ value: email }) => {
     if (email) {
-      pwReset(email).then(result => {        
+      pwReset(email).then((result) => {
         ReactSwal.fire({
-          title: 'Email Sent!', 
-          text: 'a link for reset your password has been sent.', 
+          title: 'Email Sent!',
+          text: 'a link for reset your password has been sent.',
           type: 'success',
           heightAuto: false,
-          customClass: { icon: 'swal-custom-overflow' }
+          customClass: { icon: 'swal-custom-overflow' },
         }).then(() => {
           setEmail(email);
         });
-      }).catch(err => {
+      }).catch((err) => {
         console.log('SwalForForgotPW pwReset err: ', err);
       });
     }
   });
-}
+};
 
 export const signInValidationSchema = Yup.object({
   email: Yup.string().email(),
@@ -65,11 +65,11 @@ export const signInValidationSchema = Yup.object({
 const onSignInSubmit = ({ email, password }, { setSubmitting, resetForm }, push, dispatch, signInWithEmailAndPW) => {
   if (signInWithEmailAndPW) {
     signInWithEmailAndPW(email, password)
-      .then(({ user: { email }}) => {
+      .then(({ user: { email } }) => {
         dispatch({
           type: 'set-user',
-          payload: { email } 
-        })
+          payload: { email },
+        });
         setSubmitting(false);
         push('/');
       })
@@ -78,15 +78,15 @@ const onSignInSubmit = ({ email, password }, { setSubmitting, resetForm }, push,
           title: code,
           text: message,
           type: 'error',
-          heightAuto: false
+          heightAuto: false,
         });
         resetForm();
       });
   }
-}
+};
 
-export default ({ history: { push, location }}: IProps) => {
-  const { state: { firebase: { signInWithEmailAndPW, pwReset }}, dispatch } = useContext(AppContext);
+export default ({ history: { push, location } }: IProps) => {
+  const { state: { firebase: { signInWithEmailAndPW, pwReset } }, dispatch } = useContext(AppContext);
   const [email, setEmail] = useState(() => {
     if (location && location.state) {
       const { email: locEmail = '' } = location.state;
@@ -102,17 +102,17 @@ export default ({ history: { push, location }}: IProps) => {
       <Formik
         initialValues={{
           email: '',
-          password: ''
+          password: '',
         }}
         validationSchema={signInValidationSchema}
         onSubmit={(values, actions) => onSignInSubmit(values, actions, push, dispatch, signInWithEmailAndPW)}
       >
         {({
           isValid,
-          isSubmitting
+          isSubmitting,
         }) => {
           return (
-            <SignContainer widthinrem={20}>            
+            <SignContainer widthinrem={20}>
               <FormInnerWrapper>
                 {signInList.map(({ label, type }) => (
                   <Field
@@ -134,7 +134,7 @@ export default ({ history: { push, location }}: IProps) => {
                 height="3.5rem"
               />
               <BottomTextBtnContainer>
-                <BottomTextButton 
+                <BottomTextButton
                   onClick={onClickSignUp}
                   value="Sign Up"
                 />
@@ -144,10 +144,10 @@ export default ({ history: { push, location }}: IProps) => {
                   value="Forgot password?"
                 />
               </BottomTextBtnContainer>
-            </SignContainer>          
+            </SignContainer>
           );
         }}
       </Formik>
     </Wrapper>
-  )
-}
+  );
+};
